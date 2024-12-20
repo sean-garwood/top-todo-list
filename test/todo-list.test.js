@@ -1,5 +1,5 @@
-import TodoList from "../src/scripts/components/todo/classes/todo-list";
-import TodoItem from "../src/scripts/components/todo/classes/todo-item";
+import TodoList from "../src/scripts/components/todo/todo-list";
+import TodoItem from "../src/scripts/components/todo-item";
 
 describe("TodoList", () => {
   it("should add a todo", () => {

@@ -1,0 +1,5 @@
+const LENGTH_ERROR_TYPES = {
+  TOO_SHORT: 'TOO_SHORT',
+  TOO_LONG: 'TOO_LONG',
+}
+export default LENGTH_ERROR_TYPES;

@@ -1,13 +1,7 @@
-import Priorities from '../../constants/priorities';
+import PriorityValidator from "../../utils/priority-validator";
 export default class Priority {
   constructor(priority) {
-    this.priority = this._validate(priority);
-  }
-
-  _validate(priority) {
-    if (!Object.values(Priorities).includes(priority)) {
-      throw new Error('The priority is invalid.');
-    }
-    return priority;
+    const validationError = PriorityValidator.validate(priority);
+    validationError ? this.error = validationError : this.priority = priority;
   }
 }

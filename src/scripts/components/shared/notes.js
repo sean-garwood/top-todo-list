@@ -1,19 +1,7 @@
-import LengthLimits from '../../constants/length-limits';
-
+import TextValidator from '../../utils/text-validator';
 export default class Notes {
   constructor(notes) {
-    this.notes = this._validate(notes);
-  }
-
-  _validate(notes) {
-    if (notes.length < LengthLimits.Notes.min) {
-      throw new Error('The notes are too short.');
-    }
-
-    if (notes.length > LengthLimits.Notes.max) {
-      throw new Error('The notes are too long.');
-    }
-
-    return notes;
+    const validationError = TextValidator.validate(notes, 'Notes');
+    validationError ? this.error = validationError : this.notes = notes;
   }
 }

@@ -1,19 +1,7 @@
-import LengthLimits from '../../constants/length-limits';
-
+import TextValidator from '../../utils/text-validator';
 export default class Title {
   constructor(title) {
-    this.title = this._validate(title);
-  }
-
-  _validate(title) {
-    if (title.length < LengthLimits.Title.min) {
-      throw new Error('The title is too short.');
-    }
-
-    if (title.length > LengthLimits.Title.max) {
-      throw new Error('The title is too long.');
-    }
-
-    return title;
+    const validationError = TextValidator.validate(title, 'Title');
+    validationError ? this.error = validationError : this.title = title;
   }
 }

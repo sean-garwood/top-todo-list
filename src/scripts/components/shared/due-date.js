@@ -1,4 +1,4 @@
-export default class TodoItemDueDate {
+export default class DueDate {
   constructor(dueDate) {
     if (!(dueDate instanceof Date)) {
       dueDate = new Date(dueDate);

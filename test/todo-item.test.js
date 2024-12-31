@@ -1,4 +1,3 @@
-import { TodoItem } from "../src/scripts/components/todo-item";
 import { mockTodoItem1 } from "./__mocks__/todo-item-mock";
 
 describe("TodoItem", () => {

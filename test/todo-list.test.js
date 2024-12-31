@@ -1,10 +1,10 @@
 import TodoList from "../src/scripts/components/todo-list";
-import TodoItem from "../src/scripts/components/todo-item";
+import { mockTodoItem1, mockTodoItem2 } from "./__mocks__/todo-item-mock";
 
 describe("TodoList", () => {
   it("should add a todo", () => {
     const todoList = new TodoList();
-    const todoItem = new TodoItem("title", "description", "12/31/2025", "notes");
+    const todoItem = mockTodoItem1
 
     todoList.add(todoItem);
 
@@ -13,7 +13,7 @@ describe("TodoList", () => {
 
   it("should remove a todo", () => {
     const todoList = new TodoList();
-    const todoItem = new TodoItem("title", "description", "12/31/2025", "notes");
+    const todoItem = mockTodoItem1
 
     todoList.add(todoItem);
     todoList.remove(todoItem);
@@ -23,11 +23,18 @@ describe("TodoList", () => {
 
   it("should not remove a todo if it does not exist", () => {
     const todoList = new TodoList();
-    const todoItem = new TodoItem("title", "description", "12/31/2025", "notes");
+    const todoItem = mockTodoItem1
 
     todoList.add(todoItem);
-    todoList.remove(new TodoItem("title", "description", "12/30/2025", "notes"));
+    todoList.remove(mockTodoItem2);
 
     expect(todoList.todos).toContain(todoItem);
+  });
+
+  it("should take a list of todos", () => {
+    const todos = [mockTodoItem1, mockTodoItem2];
+    const todoList = new TodoList("some list", todos);
+
+    expect(todoList.todos.length).toBe(2);
   });
 });

@@ -30,11 +30,9 @@ spec](https://www.theodinproject.com/lessons/javascript-todo-list)
 
 ### features to add
 
-#### class Todo features to add
+- ui
 
-- description:text
-- dueDate:formatted dateTime
-  - use the package `date-fns`
-- priority:{0-9}
-- notes:text
--
+### npm pkgs to install/include
+
+- date-fns
+- localStorage

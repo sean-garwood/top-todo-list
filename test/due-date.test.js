@@ -5,9 +5,10 @@ describe("DueDate", () => {
     expect(mockValidDueDate).toBeInstanceOf(Date);
   });
 
-  it("should throw when attempting to create todo-item with a past due date", () => {
-    expect(() => {
-      new DueDate(mockPastDueDate);
-    }).toThrow('The due date is in the past.');
+  it("should be an error if the due date is in the past", () => {
+    const dueDate = new DueDate(mockPastDueDate);
+    expect(dueDate.error).toBe(
+      `Invalid date: ${mockPastDueDate}\nThe date is in the past.`
+    );
   });
 });

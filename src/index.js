@@ -1,17 +1,19 @@
-import './style.css';
-import UI from './scripts/components/ui';
+// import './style.css';
+import UI from './scripts/components/ui.js';
+import TodoItem from './scripts/components/todo-item.js';
+import TodoList from './scripts/components/todo-list.js';
+import DefaultTodoList from './scripts/constants/default-todo-list.js';
 
-// Sample data for todo lists and items
-const sampleTodoItems = [
-  { title: 'Buy groceries', dueDate: '2025-12-01', priority: 'high' },
-  { title: 'Walk the dog', dueDate: '2025-12-02', priority: 'medium' },
-];
+const todoLists = [];
 
-const sampleTodoLists = [
-  { title: 'Personal', todos: sampleTodoItems },
-  { title: 'Work', todos: [] },
-];
-
+// default todo list
+todoLists.push(DefaultTodoList);
 document.addEventListener('DOMContentLoaded', () => {
-  UI.renderTodoLists(sampleTodoLists);
+  UI.renderTodoLists(todoLists);
+
+  document.getElementById('create-todo-list').addEventListener('click', () => {
+    let newTodoList = DefaultTodoList;
+    todoLists.push(newTodoList);
+    UI.renderTodoLists(todoLists);
+  });
 });

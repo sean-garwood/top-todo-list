@@ -1,5 +1,5 @@
-import { mockPastDueDate, mockValidDueDate } from "./__mocks__/due-date-mock";
-import DueDate from "../src/scripts/components/shared/due-date";
+import { mockPastDueDate, mockValidDueDate } from "./__mocks__/due-date-mock.js";
+import DueDate from "../src/scripts/components/shared/due-date.js";
 describe("DueDate", () => {
   it("should create a new todo item due date", () => {
     expect(mockValidDueDate).toBeInstanceOf(Date);

@@ -1,4 +1,4 @@
-import { mockTodoItem1 } from "./__mocks__/todo-item-mock";
+import { mockTodoItem1 } from "./__mocks__/todo-item-mock.js";
 
 describe("TodoItem", () => {
   it("should create a new todo item", () => {

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "[project spec](https://www.theodinproject.com/lessons/javascript-todo-list)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "build": "webpack --mode development",

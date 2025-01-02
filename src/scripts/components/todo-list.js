@@ -1,5 +1,5 @@
-import Statuses from '../constants/statuses';
-import TodoItem from './todo-item';
+import Statuses from '../constants/statuses.js';
+import TodoItem from './todo-item.js';
 
 export default class TodoList extends TodoItem {
   constructor(title, description, dueDate, notes, priority, todos = []) {

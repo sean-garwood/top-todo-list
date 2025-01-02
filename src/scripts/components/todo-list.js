@@ -1,29 +1,39 @@
-import { Title, Description, DueDate, Notes, Priority, Status } from './shared';
+import Statuses from '../constants/statuses';
+import TodoItem from './todo-item';
 
-export default class TodoList {
+export default class TodoList extends TodoItem {
   constructor(title, description, dueDate, notes, priority, todos = []) {
-    this.title = new Title(title).title;
-    this.description = new Description(description).description;
-    this.dueDate = new DueDate(dueDate).dueDate;
-    this.notes = new Notes(notes).notes;
-    this.priority = new Priority(priority).priority;
-    this.status = new Status().status;
-    this.todos = Array.isArray(todos) ? todos : [];
+    super(title, description, dueDate, notes, priority);
+    this._todos = Array.isArray(todos) ? todos : [];
   }
 
   add(todo) {
-    this.todos.push(todo);
+    if (todo instanceof TodoItem) {
+      this._todos.push(todo);
+    } else {
+      throw new Error("Only instances of TodoItem can be added to the list.");
+    }
   }
 
   remove(todo) {
-    this.todos = this.todos.filter((item) => item !== todo);
+    this._todos = this._todos.filter((item) => item !== todo);
   }
 
   isEmpty() {
-    return this.todos.length === 0;
+    return this._todos.length === 0;
   }
 
   isComplete() {
-    return this.todos.every((todo) => todo.isComplete());
+    return this._todos.every((todo) => todo.isComplete());
+  }
+
+  get status() {
+    if (this.isEmpty()) return Statuses.NOT_STARTED;
+    if (this.isComplete()) return Statuses.COMPLETED;
+    return Statuses.IN_PROGRESS;
+  }
+
+  get todos() {
+    return this._todos;
   }
 }

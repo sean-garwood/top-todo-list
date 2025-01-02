@@ -1,3 +1,4 @@
+// TODO: validate that the todo-item due date is before the todo-list due date
 export default class DateValidator {
   static validate(date) {
     const baseErrorMessage = `Invalid date: ${date}\n`;
@@ -11,4 +12,3 @@ export default class DateValidator {
     else return null;
   }
 }
-// TODO: validate that the todo-item due date is before the todo-list due date

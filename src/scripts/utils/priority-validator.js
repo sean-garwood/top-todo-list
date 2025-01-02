@@ -6,6 +6,8 @@ export default class PriorityValidator {
     if (!Object.values(Priorities).includes(priority)) {
       return `${baseErrorMessage}Please enter a valid priority.\n` +
         `Valid priorities: ${Object.values(Priorities).join(', ')}`;
-    } else return null;
+    }
+
+    return null;
   }
 };

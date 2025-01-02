@@ -1,7 +1,10 @@
-import PriorityValidator from "../../utils/priority-validator";
-export default class Priority {
+import Validatable from './validatable';
+import PriorityValidator from '../../utils/priority-validator';
+
+export default class Priority extends Validatable {
   constructor(priority) {
-    const validationError = PriorityValidator.validate(priority);
-    validationError ? this.error = validationError : this.priority = priority;
+    super(priority, (value) => PriorityValidator.validate(value, 'Priority'));
   }
+
+  get priority() { return this.value; }
 }

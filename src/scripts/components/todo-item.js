@@ -1,6 +1,5 @@
-import { Title, Description, DueDate, Notes, Priority } from './shared';
+import { Title, Description, DueDate, Notes, Priority, Status } from './shared';
 import Statuses from '../constants/statuses';
-import Priorities from '../constants/priorities';
 
 export default class TodoItem {
   constructor(title, description, dueDate, notes, priority) {
@@ -9,24 +8,22 @@ export default class TodoItem {
     this.dueDate = new DueDate(dueDate).dueDate;
     this.notes = new Notes(notes).notes;
     this.priority = new Priority(priority).priority;
-    this.status = Statuses.NOT_STARTED;
+    this._status = Statuses.NOT_STARTED; // Use a private field
   }
 
   get priority() { return this._priority; }
   set priority(value) {
-    if (!Object.values(Priorities).includes(value)) {
-      throw new Error('Invalid priority');
-    }
-
-    this._priority = value;
+    let newPriority = new Priority(value);
+    if (newPriority.isValid) this._priority = newPriority.priority;
   }
 
   get status() { return this._status; }
   set status(value) {
-    if (!Object.values(Statuses).includes(value)) {
-      throw new Error('Invalid status');
-    }
+    let newStatus = new Status(value);
+    if (newStatus.isValid) this._status = newStatus.status;
+  }
 
-    this._status = value;
+  isComplete() {
+    return this.status === Statuses.COMPLETED;
   }
 }

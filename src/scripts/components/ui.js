@@ -1,5 +1,3 @@
-// ui.js
-
 const UI = (() => {
   const createTodoListElement = (todoList) => {
     const todoListElement = document.createElement('div');

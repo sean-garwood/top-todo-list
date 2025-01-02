@@ -1,13 +1,12 @@
 import LengthLimits from '../length-limits';
 import Priorities from '../priorities';
-import Statuses from '../statuses';
 import TodoItem from '../../components/todo-item';
 
 const defaultTitle = 'Mark this complete!';
 const defaultDescription =
   'This is the description of the todo.' +
-  `Put a short (less than ${LengthLimits.Description.max} characters)` +
-  'description here. Descriptions are required and must be at least' +
+  `Put a short (<${LengthLimits.Description.max} characters)` +
+  'description here. Descriptions are required. Must be at least' +
   ` ${LengthLimits.Description.min} characters long.`;
 const defaultDueDate = new Date();
 const defaultNotes =

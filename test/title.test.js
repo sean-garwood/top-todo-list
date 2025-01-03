@@ -1,6 +1,6 @@
-import { validTitle, invalidTitleContent } from './__mocks__/title-mock';
-import Title from '../src/scripts/components/shared/title';
-import LengthLimits from '../src/scripts/constants/length-limits';
+import { validTitle, invalidTitleContent } from './__mocks__/title-mock.js';
+import Title from '../src/scripts/components/shared/title.js';
+import LengthLimits from '../src/scripts/constants/length-limits.js';
 
 describe('Title', () => {
   it('should create a valid title', () => {

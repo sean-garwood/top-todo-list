@@ -1,6 +1,6 @@
-import LengthLimits from '../length-limits';
-import Priorities from '../priorities';
-import TodoItem from '../../components/todo-item';
+import LengthLimits from '../length-limits.js';
+import Priorities from '../priorities.js';
+import TodoItem from '../../components/todo-item.js';
 
 const defaultTitle = 'Mark this complete!';
 const defaultDescription =

@@ -1,4 +1,4 @@
-import { mockTodoItem1, mockTodoItem2 } from "./__mocks__/todo-item-mock";
+import { mockTodoItem1, mockTodoItem2 } from "./__mocks__/todo-item-mock.js";
 import { mockEmptyTodoList, mockTodoListWithItems }
   from "./__mocks__/todo-list-mock";
 

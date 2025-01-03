@@ -1,5 +1,5 @@
-import { validNotes, invalidNotesContent } from './__mocks__/notes-mock';
-import Notes from '../src/scripts/components/shared/notes';
+import { validNotes, invalidNotesContent } from './__mocks__/notes-mock.js';
+import Notes from '../src/scripts/components/shared/notes.js';
 describe('Notes', () => {
   it('should create a new todo item notes given content with valid length', () => {
     expect(validNotes.notes).toBe('notes');

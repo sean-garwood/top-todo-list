@@ -1,4 +1,4 @@
-import Statuses from '../../constants/statuses';
+import Statuses from '../../constants/statuses.js';
 
 export default class Status {
   constructor() {

@@ -1,5 +1,5 @@
-import { validPriority, invalidPriorityContent } from "./__mocks__/priority-mock";
-import Priority from "../src/scripts/components/shared/priority";
+import { validPriority, invalidPriorityContent } from "./__mocks__/priority-mock.js";
+import Priority from "../src/scripts/components/shared/priority.js";
 
 describe('Priority', () => {
   it('should return a valid priority', () => {

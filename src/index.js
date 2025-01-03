@@ -1,8 +1,8 @@
 import './style.css';
-import UI from './scripts/components/ui';
-import TodoItem from './scripts/components/todo-item';
-import TodoList from './scripts/components/todo-list';
-import DefaultTodoList from './scripts/constants/default-todo-list';
+import UI from './scripts/components/ui.js';
+import TodoItem from './scripts/components/todo-item.js';
+import TodoList from './scripts/components/todo-list.js';
+import DefaultTodoList from './scripts/constants/default-todo-list.js';
 
 const todoLists = [];
 

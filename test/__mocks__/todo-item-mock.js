@@ -1,5 +1,5 @@
-import TodoItem from '../../src/scripts/components/todo-item';
-import Priorities from "../../src/scripts/constants/priorities";
+import TodoItem from '../../src/scripts/components/todo-item.js';
+import Priorities from "../../src/scripts/constants/priorities.js";
 
 const someDate1 = new Date(2025, 11, 31);
 const somePriority1 = Priorities.LOW;

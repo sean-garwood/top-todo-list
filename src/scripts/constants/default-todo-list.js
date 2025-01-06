@@ -15,7 +15,7 @@ const defaultTodoList = new TodoList(
   defaultDueDate,
   defaultNotes,
   defaultPriority,
-  defaultTodoItem
+  [defaultTodoItem]
 );
 
 export default defaultTodoList;

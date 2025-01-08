@@ -1,4 +1,4 @@
-import Statuses from '../../constants/statuses.js';
+import Statuses from 'Constants/statuses.js';
 import createTodoElement from './create-todo-element.js';
 import renderTodoItems from './todo-item.js';
 

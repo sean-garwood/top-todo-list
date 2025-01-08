@@ -1,4 +1,4 @@
-import Statuses from '../constants/statuses.js';
+import Statuses from 'Constants/statuses.js';
 import TodoItem from './todo-item.js';
 
 export default class TodoList extends TodoItem {

@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+import path from "path";
 
 export default {
   mode: "development",
@@ -33,5 +34,13 @@ export default {
         loader: "html-loader",
       },
     ],
+  },
+  resolve: {
+    alias: {
+      Components: path.resolve(__dirname, "src/scripts/components/"),
+      Constants: path.resolve(__dirname, "src/scripts/constants/"),
+      SharedComponents: path.resolve(__dirname, "src/scripts/components/shared/"),
+      Utils: path.resolve(__dirname, "src/scripts/utils/"),
+    },
   },
 };

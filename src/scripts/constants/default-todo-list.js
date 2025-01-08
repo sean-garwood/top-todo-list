@@ -1,7 +1,7 @@
 // when the user visits the page, a default todo list is
 // created and rendered.
 
-import TodoList from '../components/todo-list.js';
+import TodoList from 'Components/todo-list.js';
 import defaultDescription from './default-todo-list/description.js';
 import defaultDueDate from './default-todo-list/due-date.js';
 import defaultNotes from './default-todo-list/notes.js';

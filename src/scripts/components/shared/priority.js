@@ -1,5 +1,5 @@
 import Validatable from './validatable.js';
-import PriorityValidator from '../../utils/priority-validator.js';
+import PriorityValidator from 'Utils/priority-validator.js';
 
 export default class Priority extends Validatable {
   constructor(priority) {

@@ -1,5 +1,5 @@
 import { Title, Description, DueDate, Notes, Priority, Status } from './shared.js';
-import Statuses from '../constants/statuses.js';
+import Statuses from 'Constants/statuses.js';
 
 export default class TodoItem {
   constructor(title, description, dueDate, notes, priority) {

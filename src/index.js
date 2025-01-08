@@ -1,13 +1,15 @@
 import './style.css';
-import UI from './scripts/components/ui.js';
-import TodoItem from './scripts/components/todo-item.js';
-import TodoList from './scripts/components/todo-list.js';
-import DefaultTodoList from './scripts/constants/default-todo-list.js';
+import UI from 'Components/ui.js';
+import TodoItem from 'Components/todo-item.js';
+import TodoList from 'Components/todo-list.js';
+import DefaultTodoList from 'Constants/default-todo-list.js';
+import Modal from 'Utils/modal.js';
 
 const todoLists = [];
 
 // default todo list
 todoLists.push(DefaultTodoList);
+
 document.addEventListener('DOMContentLoaded', () => {
   UI.renderTodoLists(todoLists);
 

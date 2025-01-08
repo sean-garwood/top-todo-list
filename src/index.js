@@ -1,4 +1,4 @@
-// import './style.css';
+import './style.css';
 import UI from './scripts/components/ui.js';
 import TodoItem from './scripts/components/todo-item.js';
 import TodoList from './scripts/components/todo-list.js';
@@ -11,8 +11,8 @@ todoLists.push(DefaultTodoList);
 document.addEventListener('DOMContentLoaded', () => {
   UI.renderTodoLists(todoLists);
 
-  document.getElementById('create-todo-list').addEventListener('click', () => {
-    let newTodoList = DefaultTodoList;
+  document.getElementById('create-todo-list').addEventListener('click', (todoList) => {
+    let newTodoList = todoList;
     todoLists.push(newTodoList);
     UI.renderTodoLists(todoLists);
   });

@@ -1,5 +1,5 @@
-import TodoList from "../../src/scripts/components/todo-list.js";
-import { mockTodoItem1, mockTodoItem2 } from "./todo-item-mock.js";
+import TodoList from "../../src/scripts/components/todo-list";
+import { mockTodoItem1, mockTodoItem2 } from "./todo-item-mock";
 
 const someDueDate = mockTodoItem2.dueDate;
 const somePriority = mockTodoItem1.priority;

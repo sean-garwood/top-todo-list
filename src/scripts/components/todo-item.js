@@ -1,5 +1,6 @@
-import { Title, Description, DueDate, Notes, Priority, Status } from './shared.js';
-import Statuses from 'Constants/statuses.js';
+import { Title, Description, DueDate, Notes, Priority, Status } from './shared';
+import Statuses from 'Constants/statuses';
+import formatDate from 'Utils/format-date';
 
 export default class TodoItem {
   constructor(title, description, dueDate, notes, priority) {
@@ -23,7 +24,12 @@ export default class TodoItem {
     if (newStatus.isValid) this._status = newStatus.status;
   }
 
+  formattedDueDate() {
+    return formatDate(this.dueDate);
+  }
+
   isComplete() {
     return this.status === Statuses.COMPLETED;
   }
+
 }

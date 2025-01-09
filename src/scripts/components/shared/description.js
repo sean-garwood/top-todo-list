@@ -1,4 +1,4 @@
-import TextValidator from 'Utils/text-validator.js';
+import TextValidator from 'Utils/text-validator';
 export default class Description {
   constructor(description) {
     const validationError = TextValidator.validate(description, 'Description');

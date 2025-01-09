@@ -1,11 +1,11 @@
-import LengthLimits from 'Constants/length-limits.js';
-import Priorities from 'Constants/priorities.js';
-import TodoItem from 'Components/todo-item.js';
+import LengthLimits from 'Constants/length-limits';
+import Priorities from 'Constants/priorities';
+import TodoItem from 'Components/todo-item';
 
 const defaultTitle = 'Mark this complete!';
 const defaultDescription =
-  'This is the todo description.' +
-  `Put a short (<${LengthLimits.Description.max} characters)` +
+  'This is the todo description. ' +
+  `Put a short (<${LengthLimits.Description.max} characters) ` +
   'description here. Descriptions are required. Must be at least' +
   ` ${LengthLimits.Description.min} characters long.`;
 const defaultDueDate = new Date();

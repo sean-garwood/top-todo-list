@@ -1,13 +1,13 @@
 // when the user visits the page, a default todo list is
 // created and rendered.
 
-import TodoList from 'Components/todo-list.js';
-import defaultDescription from './default-todo-list/description.js';
-import defaultDueDate from './default-todo-list/due-date.js';
-import defaultNotes from './default-todo-list/notes.js';
-import defaultPriority from './default-todo-list/priority.js';
-import defaultTitle from './default-todo-list/title.js';
-import defaultTodoItem from './default-todo-list/todo-item.js';
+import TodoList from 'Components/todo-list';
+import defaultDescription from './default-todo-list/description';
+import defaultDueDate from './default-todo-list/due-date';
+import defaultNotes from './default-todo-list/notes';
+import defaultPriority from './default-todo-list/priority';
+import defaultTitle from './default-todo-list/title';
+import defaultTodoItem from './default-todo-list/todo-item';
 
 const defaultTodoList = new TodoList(
   defaultTitle,

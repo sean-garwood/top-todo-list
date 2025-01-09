@@ -1,4 +1,4 @@
-import Priorities from '../priorities.js';
+import Priorities from '../priorities';
 
 const defaultPriority = Priorities.LOW;
 

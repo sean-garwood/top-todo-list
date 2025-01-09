@@ -1,4 +1,4 @@
-import Priorities from 'Constants/priorities.js';
+import Priorities from 'Constants/priorities';
 
 export default class PriorityValidator {
   static validate(priority) {

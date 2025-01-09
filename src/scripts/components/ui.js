@@ -1,5 +1,5 @@
-import renderTodoLists from './ui/todo-list.js';
-import renderTodoItems from './ui/todo-item.js';
+import renderTodoLists from './ui/todo-list';
+import renderTodoItems from './ui/todo-item';
 
 const UI = {
   renderTodoLists,

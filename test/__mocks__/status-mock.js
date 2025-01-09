@@ -1,4 +1,4 @@
-import Status from '../../src/scripts/components/shared/status.js';
+import Status from '../../src/scripts/components/shared/status';
 
 const validStatus = new Status();
 

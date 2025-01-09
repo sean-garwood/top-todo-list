@@ -1,6 +1,6 @@
-import Status from '../src/scripts/components/shared/status.js';
-import Statuses from "../src/scripts/constants/statuses.js";
-import validStatus from "./__mocks__/status-mock.js";
+import Status from 'SharedComponents/status';
+import Statuses from "Constants/statuses";
+import validStatus from "./__mocks__/status-mock";
 
 describe('Status', () => {
   it('should default to not started status', () => {

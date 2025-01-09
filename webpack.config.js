@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 import path from "path";
+import { type } from "os";
 
 export default {
   mode: "development",
@@ -33,6 +34,12 @@ export default {
         test: /\.html$/i,
         loader: "html-loader",
       },
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false,
+        },
+      }
     ],
   },
   resolve: {

@@ -1,4 +1,4 @@
-import LengthLimits from "Constants/length-limits.js";
+import LengthLimits from "Constants/length-limits";
 
 export default class TextValidator {
   static validate(text, fieldName) {

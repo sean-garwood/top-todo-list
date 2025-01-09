@@ -1,4 +1,4 @@
-import DateValidator from 'Utils/date-validator.js';
+import DateValidator from 'Utils/date-validator';
 export default class DueDate {
   constructor(dueDate) {
     const validationError = DateValidator.validate(dueDate);

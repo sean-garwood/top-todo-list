@@ -1,7 +1,7 @@
 const Priorities = {
-  LOW: 'low',
-  MEDIUM: 'medium',
-  HIGH: 'high',
+  LOW: 'Low',
+  MEDIUM: 'Medium',
+  HIGH: 'High',
 }
 
 export default Priorities;

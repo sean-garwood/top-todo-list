@@ -1,7 +1,7 @@
-// testing ../src/scripts/components/shared/description.js
+// testing ../src/scripts/components/shared/description
 
-import Description from '../src/scripts/components/shared/description.js.js';
-import { validDescription, invalidDescriptionText } from './__mocks__/description-mock.js';
+import Description from '../src/scripts/components/shared/description';
+import { validDescription, invalidDescriptionText } from './__mocks__/description-mock';
 
 describe('Description', () => {
   it('should create a new Description object with a valid description', () => {

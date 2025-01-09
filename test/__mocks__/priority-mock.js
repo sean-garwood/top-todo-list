@@ -1,6 +1,6 @@
-import Priority from '../../src/scripts/components/shared/priority.js';
+import Priority from '../../src/scripts/components/shared/priority';
 
-const validPriority = new Priority('low');
+const validPriority = new Priority('Low');
 const invalidPriorityContent = 'lowish';
 
 export { validPriority, invalidPriorityContent };

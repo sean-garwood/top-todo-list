@@ -18,6 +18,10 @@ const config = {
   moduleNameMapper: {
     '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
     '\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '^Components/(.*)$': '<rootDir>/src/scripts/components/$1',
+    '^Constants/(.*)$': '<rootDir>/src/scripts/constants/$1',
+    '^SharedComponents/(.*)$': '<rootDir>/src/scripts/components/shared/$1',
+    '^Utils/(.*)$': '<rootDir>/src/scripts/utils/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -128,9 +132,6 @@ const config = {
   // tell jest how to find webpack modules and extensions
   moduleFileExtensions: ['js'],
   moduleDirectories: ['node_modules', 'src'],
-
-
-
 };
 
 export default config;

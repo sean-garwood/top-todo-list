@@ -4,10 +4,14 @@ export default class DateValidator {
     const baseErrorMessage = `Invalid date: ${date}\n`;
 
     if (!Date.parse(date)) {
-      return `${baseErrorMessage}Please enter a valid date.`;
+      const fullMessage = `${baseErrorMessage}Please enter a valid date.`;
+      console.warn(fullMessage);
+      return fullMessage;
     }
     else if (new Date(date) < new Date()) {
-      return `${baseErrorMessage}The date is in the past.`;
+      const fullMessage = `${baseErrorMessage}The date is in the past.`;
+      console.warn(fullMessage);
+      return fullMessage
     }
     else return null;
   }

@@ -4,7 +4,7 @@ import TodoItem from 'Components/todo-item';
 import TodoList from 'Components/todo-list';
 import DefaultTodoList from 'Constants/default-todo-list';
 import Modal from 'Utils/modal';
-import { todoItemFormTemplate, todoListFormTemplate } from 'Constants/forms';
+import { todoItemFormTemplate, todoListFormTemplate } from 'Constants/todo-forms';
 
 const todoLists = [];
 

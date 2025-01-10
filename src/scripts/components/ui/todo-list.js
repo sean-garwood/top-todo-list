@@ -4,7 +4,7 @@ import Statuses from 'Constants/statuses';
 import Modal from 'Utils/modal';
 import createTodoElement from './create-todo-element';
 import renderTodoItems from './todo-item';
-import { todoListFormTemplate, todoItemFormTemplate } from 'Constants/forms';
+import { todoListFormTemplate, todoItemFormTemplate } from 'Constants/todo-forms';
 
 
 const createTodoListElement = (todoList) => {

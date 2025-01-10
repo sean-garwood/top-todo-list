@@ -1,3 +1,4 @@
+import { todoItemFormTemplate } from 'Constants/todo-forms';
 import TodoItem from 'Components/todo-item';
 import createTodoElement from "./create-todo-element";
 import Modal from 'Utils/modal';
@@ -29,39 +30,24 @@ const createTodoItemElement = (
       <p>Priority: ${todoItem.priority}</p>
       <p>Notes: ${todoItem.notes}</p>
       <p>Completion status: ${todoItem.status}</p>
-      <button class="expand-todo-item-btn">Expand Todo Item</button>
       <button class="delete-todo-item-btn">Delete Todo Item</button>
       <button class="edit-todo-item-btn">Edit Todo Item</button>
     `);
 
   const index = getIndexOfTodoItem(todoItem, todoItems);
-  todoItemElement.querySelector('.delete-todo-item-btn').
-    addEventListener('click', () => {
-      deleteTodoItem(todoItems, index);
-      renderTodoItems(todoItems, todoListContainer);
-    });
+  const deleteTodoItemBtn = todoItemElement.querySelector('.delete-todo-item-btn');
+  const editTodoItemBtn = todoItemElement.querySelector('.edit-todo-item-btn');
 
-  todoItemElement.querySelector('.edit-todo-item-btn').addEventListener('click', () => {
+  deleteTodoItemBtn.addEventListener('click', () => {
+    deleteTodoItem(todoItems, index);
+    renderTodoItems(todoItems, todoListContainer);
+  });
+
+  editTodoItemBtn.addEventListener('click', () => {
     // pull up modal form filled with current data
-    const modal = new Modal(`
-      <form id="edit-todo-item-form">
-        <label for="edit-todo-item-title">Title:</label>
-        <input type="text" id="edit-todo-item-title" value="${todoItem.title}">
-        <label for="edit-todo-item-description">Description:</label>
-        <input type="text" id="edit-todo-item-description" value="${todoItem.description}">
-        <label for="edit-todo-item-due-date">Due Date:</label>
-        <input type="date" id="edit-todo-item-due-date" value="${todoItem.dueDate}">
-        <label for="edit-todo-item-priority">Priority:</label>
-        <input type="text" id="edit-todo-item-priority" value="${todoItem.priority}">
-        <label for="edit-todo-item-notes">Notes:</label>
-        <input type="text" id="edit-todo-item-notes" value="${todoItem.notes}">
-        <label for="edit-todo-item-status">Completion status:</label>
-        <input type="text" id="edit-todo-item-status" value="${todoItem.status}">
-        <button type="submit">Edit Todo Item</button>
-      </form>
-    `);
+    const modal = new Modal(todoItemFormTemplate);
     modal.open();
-    const editTodoItemForm = document.getElementById('edit-todo-item-form');
+    const editTodoItemForm = document.querySelector('#todo-item-form');
     editTodoItemForm.addEventListener('submit', (event) => {
       // update the information in the todo item
       event.preventDefault();

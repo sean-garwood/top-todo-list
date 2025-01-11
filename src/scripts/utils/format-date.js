@@ -1,5 +1,11 @@
 import { format } from 'date-fns';
 
-export default function formatDate(date) {
+function formatDate(date) {
   return format(date, 'MM/dd/yyyy');
 }
+
+function formatDateForForm(date) {
+  return format(date, 'yyyy-MM-dd');
+}
+
+export { formatDate, formatDateForForm };

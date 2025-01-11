@@ -63,10 +63,10 @@ const createTodoListElement = (todoList) => {
   function handleEditClick(event) {
     const modal = new Modal(todoListFormTemplate);
     modal.open();
-    const form = document.querySelector('#todo-list-form');
+    const form = document.querySelector('#todo-item-form'); // HACK
     form.title.value = todoList.title;
     form.description.value = todoList.description;
-    form['due-date'].value = todoList.dueDate;
+    form['due-date'].value = todoList.formattedDueDateForForm();
     form.notes.value = todoList.notes;
     form.priority.value = todoList.priority;
     form.addEventListener('submit', (event) => {
@@ -88,7 +88,7 @@ const createTodoListElement = (todoList) => {
   function handleAddClick(event) {
     const modal = new Modal(todoItemFormTemplate);
     modal.open();
-    const form = document.querySelector('#todo-item-form');
+    const form = document.querySelector('#todo-item-form'); // HACK
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const newTodo = new TodoItem(
@@ -118,7 +118,6 @@ const renderTodoLists = (todoLists) => {
   todoLists.forEach((todoList) => {
     const todoListElement = createTodoListElement(todoList);
     todoListsContainer.appendChild(todoListElement);
-    console.log('Rendering todo items for list:', todoList.title, todoList.todos);
     renderTodoItems(todoList.todos, todoListElement.querySelector('.todo-items-container'));
   });
 };

@@ -1,6 +1,6 @@
 import { Title, Description, DueDate, Notes, Priority, Status } from './shared';
 import Statuses from 'Constants/statuses';
-import formatDate from 'Utils/format-date';
+import { formatDate, formatDateForForm } from 'Utils/format-date';
 
 export default class TodoItem {
   constructor(title, description, dueDate, notes, priority) {
@@ -46,6 +46,10 @@ export default class TodoItem {
 
   formattedDueDate() {
     return formatDate(this.dueDate);
+  }
+
+  formattedDueDateForForm() {
+    return formatDateForForm(this.dueDate);
   }
 
   isComplete() {

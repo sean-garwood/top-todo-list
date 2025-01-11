@@ -1,7 +1,8 @@
 import { todoItemFormTemplate } from 'Constants/todo-forms';
-import TodoItem from 'Components/todo-item';
+import todoLists from '../../..';
 import createTodoElement from "./create-todo-element";
 import Modal from 'Utils/modal';
+import renderTodoLists from './todo-list';
 
 const getIndexOfTodoItem = (todoItem, todoItems) => {
   return todoItems.indexOf(todoItem);
@@ -38,7 +39,7 @@ const createTodoItemElement = (
 
   deleteTodoItemBtn.addEventListener('click', () => {
     deleteTodoItem(todoItems, index);
-    renderTodoItems(todoItems, todoListContainer);
+    renderTodoLists(todoLists);
   });
 
   editTodoItemBtn.addEventListener('click', () => {
@@ -46,16 +47,24 @@ const createTodoItemElement = (
     const modal = new Modal(todoItemFormTemplate);
     modal.open();
     const editTodoItemForm = document.querySelector('#todo-item-form');
+    editTodoItemForm.title.value = todoItem.title;
+    editTodoItemForm.description.value = todoItem.description;
+    editTodoItemForm['due-date'].value = todoItem.formattedDueDateForForm();
+    editTodoItemForm.notes.value = todoItem.notes;
+    editTodoItemForm.priority.value = todoItem.priority;
+
     editTodoItemForm.addEventListener('submit', (event) => {
       event.preventDefault();
-      todoItem.title = event.target.title.value;
-      todoItem.description = event.target.description.value;
-      todoItem.dueDate = event.target['due-date'].value;
-      todoItem.priority = event.target.priority.value;
-      todoItem.notes = event.target.notes.value;
-      todoItem.status = event.target.status.value;
+      const form = event.target;
+      todoItem.title = form.title.value;
+      todoItem.description = form.description.value;
+      todoItem.dueDate = form['due-date'].value;
+      todoItem.priority = form.priority.value;
+      todoItem.notes = form.notes.value;
+      todoItem.status = form.status.value;
       modal.close();
       renderTodoItems(todoItems, todoListContainer);
+      renderTodoLists(todoLists);
     });
   });
 
@@ -68,8 +77,6 @@ const createTodoItemElement = (
 };
 
 const renderTodoItems = (todoItems, todoListContainer) => {
-  console.log('Rendering todo items:', todoItems);
-  console.log(`into ${todoListContainer.classList}`);
   todoListContainer.innerHTML = '';
   todoItems.forEach((todoItem) => {
     const todoItemElement = createTodoItemElement(

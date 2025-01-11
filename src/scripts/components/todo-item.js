@@ -52,4 +52,8 @@ export default class TodoItem {
     return this.status === Statuses.COMPLETED;
   }
 
+  markComplete() {
+    this.status = Statuses.COMPLETED;
+  }
+
 }

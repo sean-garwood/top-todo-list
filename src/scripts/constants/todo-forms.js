@@ -1,3 +1,4 @@
+import Statuses from 'Constants/statuses';
 const generateTodoFormTemplate = (type) => `
   <form id="${type}-form">
   <fieldset>
@@ -25,13 +26,28 @@ const generateTodoFormTemplate = (type) => `
         <option value="Medium">Medium</option>
         <option value="High">High</option>
       </select>
-    </div>
+    </div>` + todoItemStatusFieldsTemplate(type) + `
     <div class="submit-btn-container">
       <button type="submit" id="${type}-submit-btn">Submit</button>
     </div>
   </fieldset>
   </form>
 `;
+
+function todoItemStatusFieldsTemplate(type) {
+  if (type === 'todo-item') {
+    return `
+    <div class="field-container">
+      <label for="status">Status:</label>
+      <select name="status" id="todo-item-status" required>
+        <option value="${Statuses.NOT_STARTED}">${Statuses.NOT_STARTED}</option>
+        <option value="${Statuses.IN_PROGRESS}">${Statuses.IN_PROGRESS}</option>
+        <option value="${Statuses.COMPLETED}">${Statuses.COMPLETED}</option>
+      </select>
+    </div>
+  `;
+  } else { return ''; }
+}
 
 const todoListFormTemplate = generateTodoFormTemplate('todo-list');
 const todoItemFormTemplate = generateTodoFormTemplate('todo-item');

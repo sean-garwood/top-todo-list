@@ -11,10 +11,6 @@ const deleteTodoItem = (todoItems, index) => {
   todoItems.splice(index, 1);
 }
 
-const updateTodoItem = (todoItems, index, updatedTodoItem) => {
-  todoItems.splice(index, 1, updatedTodoItem);
-};
-
 const createTodoItemElement = (
   todoItem,
   todoItems,
@@ -32,11 +28,13 @@ const createTodoItemElement = (
       <p>Completion status: ${todoItem.status}</p>
       <button class="delete-todo-item-btn">Delete Todo Item</button>
       <button class="edit-todo-item-btn">Edit Todo Item</button>
+      <button class="mark-complete-btn">Mark Complete</button>
     `);
 
   const index = getIndexOfTodoItem(todoItem, todoItems);
   const deleteTodoItemBtn = todoItemElement.querySelector('.delete-todo-item-btn');
   const editTodoItemBtn = todoItemElement.querySelector('.edit-todo-item-btn');
+  const markCompleteBtn = todoItemElement.querySelector('.mark-complete-btn');
 
   deleteTodoItemBtn.addEventListener('click', () => {
     deleteTodoItem(todoItems, index);
@@ -49,19 +47,23 @@ const createTodoItemElement = (
     modal.open();
     const editTodoItemForm = document.querySelector('#todo-item-form');
     editTodoItemForm.addEventListener('submit', (event) => {
-      // update the information in the todo item
       event.preventDefault();
-      // use the form fields to create new components
-      const titleValue = document.getElementById('edit-todo-item-title').value;
-      const descriptionValue = document.getElementById('edit-todo-item-description').value;
-      const dueDateValue = document.getElementById('edit-todo-item-due-date').value;
-      const priorityValue = document.getElementById('edit-todo-item-priority').value;
-      const notesValue = document.getElementById('edit-todo-item-notes').value;
-      const statusValue = document.getElementById('edit-todo-item-status').value;
-      const updatedTodoItem = new TodoItem(titleValue, descriptionValue, dueDateValue, priorityValue, notesValue, statusValue);
-      updateTodoItem(todoItems, index, updatedTodoItem);
+      todoItem.title = event.target.title.value;
+      todoItem.description = event.target.description.value;
+      todoItem.dueDate = event.target['due-date'].value;
+      todoItem.priority = event.target.priority.value;
+      todoItem.notes = event.target.notes.value;
+      todoItem.status = event.target.status.value;
+      modal.close();
+      renderTodoItems(todoItems, todoListContainer);
     });
-  })
+  });
+
+  markCompleteBtn.addEventListener('click', () => {
+    todoItem.markComplete();
+    renderTodoItems(todoItems, todoListContainer);
+  });
+
   return todoItemElement;
 };
 

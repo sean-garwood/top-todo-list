@@ -78,6 +78,10 @@ footer {
   cursor: pointer;
 }
 
+.complete {
+  background-color: limegreen;
+}
+
 .todo-items-container {
   /* TODO: attach event listener to expand todo list button */
   /* display: none; */

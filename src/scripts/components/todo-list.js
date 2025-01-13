@@ -28,9 +28,9 @@ export default class TodoList extends TodoItem {
   }
 
   get status() {
-    if (this.isEmpty()) return Statuses.NOT_STARTED;
-    if (this.isComplete()) return Statuses.COMPLETED;
-    return Statuses.IN_PROGRESS;
+    if (this.isEmpty()) return Statuses.INCOMPLETE;
+    if (this.isComplete()) return Statuses.COMPLETE;
+    return Statuses.INCOMPLETE;
   }
 
   get todos() {

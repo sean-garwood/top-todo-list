@@ -1,4 +1,5 @@
 import { todoItemFormTemplate } from 'Constants/todo-forms';
+import Statuses from 'Constants/statuses';
 import todoLists from '../../..';
 import createTodoElement from "./create-todo-element";
 import Modal from 'Utils/modal';
@@ -61,16 +62,14 @@ const createTodoItemElement = (
       todoItem.dueDate = form['due-date'].value;
       todoItem.priority = form.priority.value;
       todoItem.notes = form.notes.value;
-      todoItem.status = form.status.value;
       modal.close();
       renderTodoItems(todoItems, todoListContainer);
-      renderTodoLists(todoLists);
     });
   });
 
   markCompleteBtn.addEventListener('click', () => {
     todoItem.markComplete();
-    renderTodoItems(todoItems, todoListContainer);
+    renderTodoLists(todoLists)
   });
 
   return todoItemElement;
@@ -84,6 +83,10 @@ const renderTodoItems = (todoItems, todoListContainer) => {
       todoItems,
       renderTodoItems,
       todoListContainer);
+    if (todoItem.isComplete()) {
+      todoItemElement.classList.add('complete');
+    }
+
     todoListContainer.appendChild(todoItemElement);
   });
 };

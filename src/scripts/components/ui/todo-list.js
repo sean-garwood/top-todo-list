@@ -9,10 +9,10 @@ import { todoListFormTemplate, todoItemFormTemplate } from 'Constants/todo-forms
 
 const createTodoListElement = (todoList) => {
   const getCount = (status) => {
-    return todoList.todos.filter((todo) => todo.status === status).length;
+    return todoList.todos.filter((todo) => todo.status == status).length;
   }
-  const completedCount = getCount(Statuses.COMPLETE);
-  const incompleteCount = getCount(Statuses.NOT_STARTED) + getCount(Statuses.IN_PROGRESS);
+  const completeCount = getCount(Statuses.COMPLETE);
+  const incompleteCount = getCount(Statuses.INCOMPLETE);
   const todoListElement = createTodoElement('div', 'todo-list', `
     <div class="todo-list-container">
       <h2>${todoList.title}</h2>
@@ -24,7 +24,7 @@ const createTodoListElement = (todoList) => {
         <div class="list-stats">
           <p>Completion status: ${todoList.status}</p>
           <p>Number of tasks: ${todoList.todos.length}</p>
-          <p>Completed: ${completedCount}</p>
+          <p>Completed: ${completeCount}</p>
           <p>Incomplete: ${incompleteCount}</p>
         </div>
         <div class="todo-items-container"></div>
@@ -63,7 +63,7 @@ const createTodoListElement = (todoList) => {
   function handleEditClick(event) {
     const modal = new Modal(todoListFormTemplate);
     modal.open();
-    const form = document.querySelector('#todo-item-form'); // HACK
+    const form = document.querySelector('#todo-list-form'); // HACK
     form.title.value = todoList.title;
     form.description.value = todoList.description;
     form['due-date'].value = todoList.formattedDueDateForForm();
@@ -108,6 +108,10 @@ const createTodoListElement = (todoList) => {
   editTodoListBtn.addEventListener('click', handleEditClick);
   deleteTodoListBtn.addEventListener('click', handleDeleteClick);
   addTodoItemBtn.addEventListener('click', handleAddClick);
+
+  if (todoList.isComplete()) {
+    todoListElement.classList.add('complete');
+  }
 
   return todoListElement;
 };

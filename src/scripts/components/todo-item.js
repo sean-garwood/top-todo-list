@@ -9,7 +9,7 @@ export default class TodoItem {
     this.dueDate = new DueDate(dueDate).dueDate;
     this.notes = new Notes(notes).notes;
     this.priority = new Priority(priority).priority;
-    this._status = Statuses.NOT_STARTED;
+    this._status = Statuses.INCOMPLETE;
   }
 
   get title() { return this._title; }
@@ -53,11 +53,11 @@ export default class TodoItem {
   }
 
   isComplete() {
-    return this.status === Statuses.COMPLETED;
+    return this.status === Statuses.COMPLETE;
   }
 
   markComplete() {
-    this.status = Statuses.COMPLETED;
+    this._status = Statuses.COMPLETE;
   }
 
 }

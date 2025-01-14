@@ -22,6 +22,7 @@ const config = {
     '^Constants/(.*)$': '<rootDir>/src/scripts/constants/$1',
     '^SharedComponents/(.*)$': '<rootDir>/src/scripts/components/shared/$1',
     '^Utils/(.*)$': '<rootDir>/src/scripts/utils/$1',
+    '^Validators/(.*)$': '<rootDir>/src/scripts/utils/validators/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

@@ -33,44 +33,45 @@ const createTodoItemElement = (
       <button class="mark-complete-btn">Mark Complete</button>
     `);
 
-  const index = getIndexOfTodoItem(todoItem, todoItems);
-  const deleteTodoItemBtn = todoItemElement.querySelector('.delete-todo-item-btn');
-  const editTodoItemBtn = todoItemElement.querySelector('.edit-todo-item-btn');
-  const markCompleteBtn = todoItemElement.querySelector('.mark-complete-btn');
+  const addListeners = (() => {
+    const index = getIndexOfTodoItem(todoItem, todoItems);
+    const deleteTodoItemBtn = todoItemElement.querySelector('.delete-todo-item-btn');
+    const editTodoItemBtn = todoItemElement.querySelector('.edit-todo-item-btn');
+    const markCompleteBtn = todoItemElement.querySelector('.mark-complete-btn');
 
-  deleteTodoItemBtn.addEventListener('click', () => {
-    deleteTodoItem(todoItems, index);
-    renderTodoLists(todoLists);
-  });
-
-  editTodoItemBtn.addEventListener('click', () => {
-    // pull up modal form filled with current data
-    const modal = new Modal(todoItemFormTemplate);
-    modal.open();
-    const editTodoItemForm = document.querySelector('#todo-item-form');
-    editTodoItemForm.title.value = todoItem.title;
-    editTodoItemForm.description.value = todoItem.description;
-    editTodoItemForm['due-date'].value = todoItem.formattedDueDateForForm();
-    editTodoItemForm.notes.value = todoItem.notes;
-    editTodoItemForm.priority.value = todoItem.priority;
-
-    editTodoItemForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const form = event.target;
-      todoItem.title = form.title.value;
-      todoItem.description = form.description.value;
-      todoItem.dueDate = form['due-date'].value;
-      todoItem.priority = form.priority.value;
-      todoItem.notes = form.notes.value;
-      modal.close();
-      renderTodoItems(todoItems, todoListContainer);
+    deleteTodoItemBtn.addEventListener('click', () => {
+      deleteTodoItem(todoItems, index);
+      renderTodoLists(todoLists);
     });
-  });
 
-  markCompleteBtn.addEventListener('click', () => {
-    todoItem.markComplete();
-    renderTodoLists(todoLists)
-  });
+    editTodoItemBtn.addEventListener('click', () => {
+      const modal = new Modal(todoItemFormTemplate);
+      modal.open();
+      const editTodoItemForm = document.querySelector('#todo-item-form');
+      editTodoItemForm.title.value = todoItem.title;
+      editTodoItemForm.description.value = todoItem.description;
+      editTodoItemForm['due-date'].value = todoItem.formattedDueDateForForm();
+      editTodoItemForm.notes.value = todoItem.notes;
+      editTodoItemForm.priority.value = todoItem.priority;
+
+      editTodoItemForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const form = event.target;
+        todoItem.title = form.title.value;
+        todoItem.description = form.description.value;
+        todoItem.dueDate = form['due-date'].value;
+        todoItem.priority = form.priority.value;
+        todoItem.notes = form.notes.value;
+        modal.close();
+        renderTodoItems(todoItems, todoListContainer);
+      });
+    });
+
+    markCompleteBtn.addEventListener('click', () => {
+      todoItem.markComplete();
+      renderTodoLists(todoLists)
+    });
+  })();
 
   return todoItemElement;
 };
@@ -84,6 +85,9 @@ const renderTodoItems = (todoItems, todoListContainer) => {
       renderTodoItems,
       todoListContainer);
     if (todoItem.isComplete()) {
+      console.log(`marking ${todoItemElement.classList} as complete`);
+      console.log(`it has the following children: ${todoItemElement.children}`);
+      console.log(`its parent is ${todoItemElement.parentElement}`);
       todoItemElement.classList.add('complete');
     }
 

@@ -1,17 +1,14 @@
 import './style.css';
-import UI from 'Components/ui';
-import TodoItem from 'Components/todo-item';
+import renderTodoLists from 'Components/ui/todo-list';
 import TodoList from 'Components/todo-list';
-import DefaultTodoList from 'Constants/default-todo-list';
 import Modal from 'Utils/modal';
-import { todoItemFormTemplate, todoListFormTemplate } from 'Constants/todo-forms';
+import { todoListFormTemplate } from 'Constants/todo-forms';
+import loadTodoLists from 'Utils/storage/load-lists';
 
-const todoLists = [];
-
-todoLists.push(DefaultTodoList);
+const todoLists = loadTodoLists();
 
 document.addEventListener('DOMContentLoaded', () => {
-  UI.renderTodoLists(todoLists);
+  renderTodoLists(todoLists);
 
   document.getElementById('create-todo-list-btn').addEventListener('click', () => {
     const modal = new Modal(todoListFormTemplate);
@@ -29,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       );
       modal.close();
       todoLists.push(newTodoList);
-      UI.renderTodoLists(todoLists);
+      renderTodoLists(todoLists);
     });
   });
 });

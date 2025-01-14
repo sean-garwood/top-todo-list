@@ -5,7 +5,6 @@ import defaultDueDate from './due-date';
 
 const defaultTitle = 'Mark this complete!';
 const defaultDescription =
-  'This is the todo description. ' +
   `Put a short (<${LengthLimits.Description.max} characters) ` +
   'description here. Descriptions are required. Must be at least' +
   ` ${LengthLimits.Description.min} characters long.`;

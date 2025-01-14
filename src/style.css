@@ -43,6 +43,24 @@ footer {
   width: 100%;
 }
 
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.complete {
+  background-color: limegreen;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -64,36 +82,23 @@ footer {
   width: 80%;
 }
 
-.close-button {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.todo-item {
+  border: #35424a 1px solid;
+  margin: 10px;
 }
 
-.close-button:hover,
-.close-button:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.complete {
-  background-color: limegreen;
-}
-
-.todo-items-container {
-  /* TODO: attach event listener to expand todo list button */
-  /* display: none; */
+.todo-items-container,
+.todo-item {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  padding: 20px;
+  padding: 0.6em;
   max-width: 30vw;
-  border: #35424a 1px solid;
 }
 
-.todo-list-container {
+.todo-list-container,
+.todo-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,4 +112,12 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+}
+
+#todo-lists {
+  /* main container for todo-lists. should treat divs as block eles */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
 }

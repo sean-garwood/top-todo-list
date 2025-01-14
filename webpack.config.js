@@ -48,6 +48,7 @@ export default {
       Constants: path.resolve(__dirname, "src/scripts/constants/"),
       SharedComponents: path.resolve(__dirname, "src/scripts/components/shared/"),
       Utils: path.resolve(__dirname, "src/scripts/utils/"),
+      Validators: path.resolve(__dirname, "src/scripts/utils/validators/"),
     },
   },
 };

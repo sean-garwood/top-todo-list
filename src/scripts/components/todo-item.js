@@ -3,13 +3,18 @@ import Statuses from 'Constants/statuses';
 import { formatDate, formatDateForForm } from 'Utils/format-date';
 
 export default class TodoItem {
-  constructor(title, description, dueDate, notes, priority) {
+  constructor(title,
+    description,
+    dueDate,
+    notes,
+    priority,
+    status = Statuses.INCOMPLETE) {
     this.title = new Title(title).title;
     this.description = new Description(description).description;
     this.dueDate = new DueDate(dueDate).dueDate;
     this.notes = new Notes(notes).notes;
     this.priority = new Priority(priority).priority;
-    this._status = Statuses.INCOMPLETE;
+    this._status = new Status(status).status;
   }
 
   get title() { return this._title; }
@@ -59,5 +64,4 @@ export default class TodoItem {
   markComplete() {
     this._status = Statuses.COMPLETE;
   }
-
 }

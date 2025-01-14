@@ -11,18 +11,18 @@ const config = {
   // Stop running tests after `n` failures
   // bail: 0,
 
-  modulePaths: ['/shared/vendor/modules'],
-  moduleFileExtensions: ['js', 'jsx'],
-  moduleDirectories: ['node_modules', 'bower_components', 'shared'],
+  modulePaths: ["/shared/vendor/modules"],
+  moduleFileExtensions: ["js", "jsx"],
+  moduleDirectories: ["node_modules", "bower_components", "shared"],
 
   moduleNameMapper: {
-    '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
-    '\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.js',
-    '^Components/(.*)$': '<rootDir>/src/scripts/components/$1',
-    '^Constants/(.*)$': '<rootDir>/src/scripts/constants/$1',
-    '^SharedComponents/(.*)$': '<rootDir>/src/scripts/components/shared/$1',
-    '^Utils/(.*)$': '<rootDir>/src/scripts/utils/$1',
-    '^Validators/(.*)$': '<rootDir>/src/scripts/utils/validators/$1',
+    "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+    "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js",
+    "^Components/(.*)$": "<rootDir>/src/scripts/components/$1",
+    "^Constants/(.*)$": "<rootDir>/src/scripts/constants/$1",
+    "^SharedComponents/(.*)$": "<rootDir>/src/scripts/components/shared/$1",
+    "^Utils/(.*)$": "<rootDir>/src/scripts/utils/$1",
+    "^Validators/(.*)$": "<rootDir>/src/scripts/utils/validators/$1",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -109,7 +109,7 @@ const config = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '^.+\\.js?$': 'ts-jest',
+    "^.+\\.js?$": "ts-jest",
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
@@ -131,8 +131,8 @@ const config = {
   // watchman: true,
 
   // tell jest how to find webpack modules and extensions
-  moduleFileExtensions: ['js'],
-  moduleDirectories: ['node_modules', 'src'],
+  moduleFileExtensions: ["js"],
+  moduleDirectories: ["node_modules", "src"],
 };
 
 export default config;

@@ -38,14 +38,17 @@ export default {
         resolve: {
           fullySpecified: false,
         },
-      }
+      },
     ],
   },
   resolve: {
     alias: {
       Components: path.resolve(__dirname, "src/scripts/components/"),
       Constants: path.resolve(__dirname, "src/scripts/constants/"),
-      SharedComponents: path.resolve(__dirname, "src/scripts/components/shared/"),
+      SharedComponents: path.resolve(
+        __dirname,
+        "src/scripts/components/shared/",
+      ),
       Utils: path.resolve(__dirname, "src/scripts/utils/"),
       Validators: path.resolve(__dirname, "src/scripts/utils/validators/"),
     },

@@ -7,15 +7,12 @@ export default class TextValidator {
 
     if (!typeLimits) {
       throw new Error(`No length limits defined for fieldName: ${fieldName}`);
-    }
-    else if (text.length < typeLimits.min) {
+    } else if (text.length < typeLimits.min) {
       return `${baseErrorMessage}short.\nMin: ${typeLimits.min}, Actual: ${text.length}`;
-    }
-    else if (text.length > typeLimits.max) {
+    } else if (text.length > typeLimits.max) {
       return `${baseErrorMessage}long.\nMax: ${typeLimits.max}, Actual: ${text.length}`;
-    }
-    else {
+    } else {
       return null;
     }
   }
-};
+}

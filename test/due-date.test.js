@@ -9,7 +9,7 @@ describe("DueDate", () => {
   it("should be an error if the due date is in the past", () => {
     const dueDate = new DueDate(mockPastDueDate);
     expect(dueDate.error).toBe(
-      `Invalid date: ${mockPastDueDate}\nThe date is in the past.`
+      `Invalid date: ${mockPastDueDate}\nThe date is in the past.`,
     );
   });
 });

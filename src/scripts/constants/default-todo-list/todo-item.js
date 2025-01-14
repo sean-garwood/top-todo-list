@@ -1,15 +1,15 @@
-import LengthLimits from 'Constants/length-limits';
-import Priorities from 'Constants/priorities';
-import TodoItem from 'Components/todo-item';
-import defaultDueDate from './due-date';
+import LengthLimits from "Constants/length-limits";
+import Priorities from "Constants/priorities";
+import TodoItem from "Components/todo-item";
+import defaultDueDate from "./due-date";
 
-const defaultTitle = 'Mark this complete!';
+const defaultTitle = "Mark this complete!";
 const defaultDescription =
   `Put a short (<${LengthLimits.Description.max} characters) ` +
-  'description here. Descriptions are required. Must be at least' +
+  "description here. Descriptions are required. Must be at least" +
   ` ${LengthLimits.Description.min} characters long.`;
 const defaultNotes =
-  'These are the notes for the todo. They are not required, but they can be' +
+  "These are the notes for the todo. They are not required, but they can be" +
   ` up to ${LengthLimits.Notes.max} characters.`;
 const defaultPriority = Priorities.HIGH;
 const defaultTodoItem = new TodoItem(
@@ -17,7 +17,7 @@ const defaultTodoItem = new TodoItem(
   defaultDescription,
   defaultDueDate,
   defaultNotes,
-  defaultPriority
+  defaultPriority,
 );
 
 export default defaultTodoItem;

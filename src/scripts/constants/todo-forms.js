@@ -1,7 +1,7 @@
 const generateTodoFormTemplate = (type) => `
   <form id="${type}-form">
   <fieldset>
-  <legend>${type.charAt(0).toUpperCase() + type.slice(1).replace('-', ' ')} Information</legend>
+  <legend>${type.charAt(0).toUpperCase() + type.slice(1).replace("-", " ")} Information</legend>
     <div class="field-container">
       <label for="title">Title:</label>
       <input type="text" name="title" id="${type}-title" required>
@@ -33,7 +33,7 @@ const generateTodoFormTemplate = (type) => `
   </form>
 `;
 
-const todoListFormTemplate = generateTodoFormTemplate('todo-list');
-const todoItemFormTemplate = generateTodoFormTemplate('todo-item');
+const todoListFormTemplate = generateTodoFormTemplate("todo-list");
+const todoItemFormTemplate = generateTodoFormTemplate("todo-item");
 
 export { todoListFormTemplate, todoItemFormTemplate };

@@ -1,7 +1,7 @@
 export default class Modal {
   constructor(content) {
-    this.modal = document.createElement('div');
-    this.modal.classList.add('modal');
+    this.modal = document.createElement("div");
+    this.modal.classList.add("modal");
     this.modal.innerHTML = `
       <div class="modal-content">
         <span class="close-button">&times;</span>
@@ -10,11 +10,11 @@ export default class Modal {
     `;
     document.body.appendChild(this.modal);
 
-    this.modal.querySelector('.close-button').addEventListener('click', () => {
+    this.modal.querySelector(".close-button").addEventListener("click", () => {
       this.close();
     });
 
-    window.addEventListener('click', (event) => {
+    window.addEventListener("click", (event) => {
       if (event.target === this.modal) {
         this.close();
       }
@@ -22,11 +22,11 @@ export default class Modal {
   }
 
   open() {
-    this.modal.style.display = 'block';
+    this.modal.style.display = "block";
   }
 
   close() {
-    this.modal.style.display = 'none';
+    this.modal.style.display = "none";
     this.modal.remove();
   }
 }

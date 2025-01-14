@@ -6,6 +6,6 @@ describe("TodoItem", () => {
     expect(mockTodoItem1.description).toBe("Description");
     expect(mockTodoItem1.dueDate).toBe(mockTodoItem1.dueDate);
     expect(mockTodoItem1.notes).toBe("Notes");
-    expect(mockTodoItem1.priority).toBe('Low');
+    expect(mockTodoItem1.priority).toBe("Low");
   });
 });

@@ -1,11 +1,13 @@
 import { mockTodoItem1, mockTodoItem2 } from "./__mocks__/todo-item-mock";
-import { mockEmptyTodoList, mockTodoListWithItems }
-  from "./__mocks__/todo-list-mock";
+import {
+  mockEmptyTodoList,
+  mockTodoListWithItems,
+} from "./__mocks__/todo-list-mock";
 
 describe("TodoList", () => {
   it("should add a todo", () => {
     const todoList = mockEmptyTodoList;
-    const todoItem = mockTodoItem1
+    const todoItem = mockTodoItem1;
 
     todoList.add(todoItem);
 
@@ -14,7 +16,7 @@ describe("TodoList", () => {
 
   it("should remove a todo", () => {
     const todoList = mockEmptyTodoList;
-    const todoItem = mockTodoItem1
+    const todoItem = mockTodoItem1;
 
     todoList.add(todoItem);
     todoList.remove(todoItem);

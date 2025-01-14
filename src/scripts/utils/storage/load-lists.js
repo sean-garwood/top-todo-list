@@ -1,7 +1,7 @@
-import TodoList from 'Components/todo-list';
-import TodoItem from 'Components/todo-item';
-import DefaultTodoList from 'Constants/default-todo-list';
-import checkIfLocalStorageAvailable from './check';
+import TodoList from "Components/todo-list";
+import TodoItem from "Components/todo-item";
+import DefaultTodoList from "Constants/default-todo-list";
+import checkIfLocalStorageAvailable from "./check";
 
 export default function loadTodoLists() {
   const itemsInStorage = localStorage.length;
@@ -11,7 +11,9 @@ export default function loadTodoLists() {
 
   const lists = [];
   const serializedLists = Object.values(localStorage);
-  serializedLists.forEach((list) => { lists.push(reconstructTodoList(list)); });
+  serializedLists.forEach((list) => {
+    lists.push(reconstructTodoList(list));
+  });
   return lists;
 
   function reconstructTodoList(serializedList) {
@@ -25,7 +27,7 @@ export default function loadTodoLists() {
           todo._dueDate,
           todo._notes,
           todo._priority,
-          todo._status
+          todo._status,
         );
       });
     })();
@@ -35,7 +37,7 @@ export default function loadTodoLists() {
       parsedList._dueDate,
       parsedList._notes,
       parsedList._priority,
-      parsedList._todos
+      parsedList._todos,
     );
   }
 }

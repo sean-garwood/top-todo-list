@@ -8,7 +8,8 @@ export const mockEmptyTodoList = new TodoList(
   "Some Description",
   someDueDate,
   "Some Notes",
-  somePriority);
+  somePriority,
+);
 
 export const mockTodoListWithItems = new TodoList(
   "Another Title",
@@ -16,4 +17,5 @@ export const mockTodoListWithItems = new TodoList(
   someDueDate,
   "Other Notes",
   somePriority,
-  [mockTodoItem1, mockTodoItem2]);
+  [mockTodoItem1, mockTodoItem2],
+);

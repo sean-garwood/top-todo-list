@@ -1,4 +1,4 @@
-import Statuses from 'Constants/statuses';
+import Statuses from "Constants/statuses";
 
 export default class Status {
   constructor(status = Statuses.INCOMPLETE) {

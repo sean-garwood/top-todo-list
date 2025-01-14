@@ -7,12 +7,10 @@ export default class DateValidator {
       const fullMessage = `${baseErrorMessage}Please enter a valid date.`;
       console.warn(fullMessage);
       return fullMessage;
-    }
-    else if (new Date(date) < new Date()) {
+    } else if (new Date(date) < new Date()) {
       const fullMessage = `${baseErrorMessage}The date is in the past.`;
       console.warn(fullMessage);
-      return fullMessage
-    }
-    else return null;
+      return fullMessage;
+    } else return null;
   }
 }

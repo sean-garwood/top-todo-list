@@ -1,3 +1,3 @@
-const defaultTitle = 'default';
+const defaultTitle = "default";
 
 export default defaultTitle;

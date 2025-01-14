@@ -4,7 +4,5 @@
     "esModuleInterop": true
   },
   // using strictly for esm support
-  "exclude": [
-    "**/**"
-  ]
+  "exclude": ["**/**"]
 }

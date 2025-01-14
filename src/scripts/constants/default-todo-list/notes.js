@@ -1,3 +1,3 @@
-const defaultNotes = '';
+const defaultNotes = "";
 
 export default defaultNotes;

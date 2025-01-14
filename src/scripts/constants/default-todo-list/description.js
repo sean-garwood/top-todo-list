@@ -1,3 +1,3 @@
-const defaultDescription = 'This is the default todo list.';
+const defaultDescription = "This is the default todo list.";
 
 export default defaultDescription;

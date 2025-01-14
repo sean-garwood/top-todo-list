@@ -1,5 +1,4 @@
 import { todoItemFormTemplate } from 'Constants/todo-forms';
-import Statuses from 'Constants/statuses';
 import todoLists from '../../..';
 import createTodoElement from "./create-todo-element";
 import Modal from 'Utils/modal';
@@ -33,7 +32,7 @@ const createTodoItemElement = (
       <button class="mark-complete-btn">Mark Complete</button>
     `);
 
-  const addListeners = (() => {
+  (() => {
     const index = getIndexOfTodoItem(todoItem, todoItems);
     const deleteTodoItemBtn = todoItemElement.querySelector('.delete-todo-item-btn');
     const editTodoItemBtn = todoItemElement.querySelector('.edit-todo-item-btn');

@@ -17,7 +17,7 @@ export default function loadTodoLists() {
   function reconstructTodoList(serializedList) {
     const parsedList = JSON.parse(serializedList);
     // list is a json object
-    const reconstructTodoItems = (() => {
+    (() => {
       parsedList._todos = parsedList._todos.map((todo) => {
         return new TodoItem(
           todo._title,

@@ -39,7 +39,7 @@ const createTodoListElement = (todoList) => {
     </div>
   `);
 
-  const addHandlers = (() => {
+  (() => {
     const expandTodoListBtn = todoListElement.querySelector('.expand-todo-list-btn');
     const editTodoListBtn = todoListElement.querySelector('.edit-todo-list-btn');
     const deleteTodoListBtn = todoListElement.querySelector('.delete-todo-list-btn');
@@ -62,7 +62,7 @@ const createTodoListElement = (todoList) => {
       event.target.addEventListener('click', handleCollapseClick);
     }
 
-    function handleEditClick(event) {
+    function handleEditClick() {
       const modal = new Modal(todoListFormTemplate);
       modal.open();
       const form = document.querySelector('#todo-list-form'); // HACK
@@ -82,12 +82,12 @@ const createTodoListElement = (todoList) => {
         renderTodoLists(todoLists);
       });
     }
-    function handleDeleteClick(event) {
+    function handleDeleteClick() {
       todoLists.splice(todoLists.indexOf(todoList), 1);
       renderTodoLists(todoLists);
     }
 
-    function handleAddClick(event) {
+    function handleAddClick() {
       const modal = new Modal(todoItemFormTemplate);
       modal.open();
       const form = document.querySelector('#todo-item-form'); // HACK

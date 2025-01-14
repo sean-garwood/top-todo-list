@@ -1,4 +1,3 @@
-import Statuses from 'Constants/statuses';
 const generateTodoFormTemplate = (type) => `
   <form id="${type}-form">
   <fieldset>

@@ -5,7 +5,7 @@ export default function storeTodoLists(lists) {
     const serializedList = JSON.stringify(list);
 
     try { localStorage.setItem(list.title, serializedList); }
-    catch (e) { console.error('Error storing todo list in local storage'); }
+    catch (e) { console.error('Error storing todo list in local storage', e); }
   }
 
   lists.forEach(storeTodoList);
